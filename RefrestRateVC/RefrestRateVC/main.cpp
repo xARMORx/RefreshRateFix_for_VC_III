@@ -1,5 +1,4 @@
 #include "main.h"
-
 HDC hDCScreen = GetDC(NULL);
 
 int RwD3D8EngineSetRefreshRate(int rate) {
@@ -8,7 +7,7 @@ int RwD3D8EngineSetRefreshRate(int rate) {
 }
 
 AsiPlugin::AsiPlugin() {
-	RwD3D8EngineSetRefreshRateHook = std::make_unique<memwrapper::memhook<RwD3D8EngineSetRefreshRatePrototype>>(0x65DC10, &RwD3D8EngineSetRefreshRate);
+	RwD3D8EngineSetRefreshRateHook = std::make_unique<memwrapper::memhook<RwD3D8EngineSetRefreshRatePrototype>>(0x65DBC0, &RwD3D8EngineSetRefreshRate);
 	RwD3D8EngineSetRefreshRateHook->install();
 }
 

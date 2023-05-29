@@ -7,7 +7,7 @@ int RwD3D8EngineSetRefreshRate(int rate) {
 }
 
 AsiPlugin::AsiPlugin() {
-	RwD3D8EngineSetRefreshRateHook = std::make_unique<memwrapper::memhook<RwD3D8EngineSetRefreshRatePrototype>>(0x5B9890, &RwD3D8EngineSetRefreshRate);
+	RwD3D8EngineSetRefreshRateHook = std::make_unique<memwrapper::memhook<RwD3D8EngineSetRefreshRatePrototype>>(0x5B95D0, &RwD3D8EngineSetRefreshRate);
 	RwD3D8EngineSetRefreshRateHook->install();
 }
 
